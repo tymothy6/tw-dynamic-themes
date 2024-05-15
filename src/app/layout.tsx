@@ -21,7 +21,7 @@ export default async function RootLayout({
 
   const { className, style } = await (
     await fetch(
-      process.env.NEXT_PUBLIC_HOST + "/api/my-theme?" + search.toString(),
+      process.env.NEXT_PUBLIC_HOST || 'http://localhost:3000' + "/api/my-theme?" + search.toString(),
     )
   ).json();
 
